@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Common",
+  "scopeName": "source.cmn",
+  "patterns": [
+    { "include": "#headword" },
+    { "include": "#triple" },
+    { "include": "#atom" },
+    { "include": "#outside" }
+  ],
+  "repository": {
+    "headword": {
+      "comment": "採用語彙の見出し。字母は be bo pa pi pu pe po（06 §17）",
+      "match": "\\b(?:be|bo|pa|pi|pu|pe|po){2,}\\b",
+      "name": "entity.name.type.cmn"
+    },
+    "triple": {
+      "comment": "ku を頭に置く三音節。領域の語（region.cam）",
+      "match": "\\bku(?:ke(?:ke|ko|sa|si|su|se|so)|ket(?:a|i))\\b",
+      "name": "support.class.cmn"
+    },
+    "atom": {
+      "patterns": [
+        {
+          "comment": "層境界 ka と無声ワイヤ ki と零標示 ku",
+          "match": "\\b(?:ka|ki|ku)\\b",
+          "name": "punctuation.separator.cmn"
+        },
+        {
+          "comment": "二進有理数の層  one ⊕ ⊖ ⋆ β Δ !",
+          "match": "\\b(?:hu|no|ha|ti|se|he|ho)\\b",
+          "name": "constant.numeric.cmn"
+        },
+        {
+          "comment": "二値の層  φ∂ ≤ π",
+          "match": "\\b(?:so|hi|mo)\\b",
+          "name": "keyword.operator.cmn"
+        },
+        {
+          "comment": "作業領域  Load Store",
+          "match": "\\b(?:mi|mu)\\b",
+          "name": "variable.other.cmn"
+        },
+        {
+          "comment": "閉包 Ω の開きと閉じ",
+          "match": "\\b(?:ya|yi)\\b",
+          "name": "keyword.control.cmn"
+        },
+        {
+          "comment": "判定値 𝒬。非可換 quantale（GCLS 定理 3.3）",
+          "match": "\\b(?:to|na|ni|nu|ne|yu|ye|yo|ra|ri|ru|go)\\b",
+          "name": "entity.name.function.cmn"
+        },
+        {
+          "comment": "鎖  ∂ と ⊕",
+          "match": "\\b(?:bi|bu)\\b",
+          "name": "support.function.cmn"
+        },
+        {
+          "comment": "報告  Ok Ko Put",
+          "match": "\\b(?:me|di|du)\\b",
+          "name": "keyword.other.cmn"
+        },
+        {
+          "comment": "音節表にはあるが平文の生成元に割り当たっていない綴り",
+          "match": "\\b[kstnhmyrwgzdbp][aiueo]\\b",
+          "name": "comment.cmn"
+        }
+      ]
+    },
+    "outside": {
+      "comment": "音節へ切れない ＡＳＣＩＩ 小文字。読みはここで Ko になる（19 式 4.1）",
+      "match": "[a-z]{3,}|\\b[a-z]\\b",
+      "name": "invalid.illegal.cmn"
+    }
+  }
+}

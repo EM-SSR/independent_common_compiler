@@ -1,0 +1,65 @@
+{
+  "name": "common-scope",
+  "displayName": "Common scope",
+  "description": "Common 言語の平文を書き、commonc が組んだ内部表現を横で見る。",
+  "version": "0.1.0",
+  "publisher": "continuous-republic",
+  "private": true,
+  "engines": { "vscode": "^1.75.0" },
+  "categories": ["Programming Languages", "Visualization"],
+  "activationEvents": ["onLanguage:common"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "common",
+        "aliases": ["Common", "cmn"],
+        "extensions": [".cmn"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "common-lexicon",
+        "aliases": ["Common lexicon"],
+        "extensions": [".dic"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      { "language": "common", "scopeName": "source.cmn", "path": "./syntaxes/cmn.tmLanguage.json" },
+      { "language": "common-lexicon", "scopeName": "source.cmn", "path": "./syntaxes/cmn.tmLanguage.json" }
+    ],
+    "commands": [
+      { "command": "commonScope.open", "title": "Common scope: notebook を開く" },
+      { "command": "commonScope.send", "title": "Common scope: このファイルを全パネルへ送る" },
+      { "command": "commonScope.pane", "title": "Common scope: パネルを一枚開く" },
+      { "command": "commonScope.stop", "title": "Common scope: server を止める" }
+    ],
+    "keybindings": [
+      {
+        "command": "commonScope.send",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus && editorLangId == common"
+      }
+    ],
+    "configuration": {
+      "title": "Common scope",
+      "properties": {
+        "commonScope.port": {
+          "type": "number",
+          "default": 8787,
+          "description": "server.py が待ち受ける port。"
+        },
+        "commonScope.python": {
+          "type": "string",
+          "default": "python",
+          "description": "server.py を動かす Python の実行ファイル。"
+        },
+        "commonScope.root": {
+          "type": "string",
+          "default": "",
+          "description": "common_scope_notebook のフォルダ。空なら workspace の中から探す。"
+        }
+      }
+    }
+  }
+}

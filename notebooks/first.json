@@ -1,0 +1,43 @@
+{
+  "title": "名前のない notebook",
+  "lead": "",
+  "dic": "",
+  "cells": [
+    {
+      "kind": "cmn",
+      "text": "# これがCommonで書けるプログラムです。\n\n",
+      "source": "we re ka, ki sa ka, ki si ka, ki wi ka, gi ka.",
+      "cut": 0,
+      "inputs": [
+        -1
+      ]
+    },
+    {
+      "kind": "cmn",
+      "text": "",
+      "source": "ma ma ma ma ka, zu ki zu ze ka, ri ri ka, yu ka.",
+      "cut": 1,
+      "inputs": [
+        1
+      ]
+    },
+    {
+      "kind": "cmn",
+      "text": "",
+      "source": "ma ma ma ma ma ma ma ma ka,\nzu ki ki zu zu ki ki ze ka,\nki ki ki ze ki ki ki zu ka,\nri ri ri ri ka,\nnu nu ka,\nyu ka.",
+      "cut": 0,
+      "inputs": [
+        0
+      ]
+    },
+    {
+      "kind": "cmn",
+      "text": "# そして、これがCommonの最小のプログラムです。\n\nHello Worldの相当物とでも呼べるでしょうか。",
+      "source": ""
+    },
+    {
+      "kind": "note",
+      "text": ""
+    }
+  ]
+}

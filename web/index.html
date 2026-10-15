@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Common scope notebook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="full">
+
+<header id="bar">
+  <span class="brand">Common scope notebook</span>
+  <select id="pick" title="notebook を選ぶ"></select>
+  <span class="sp"></span>
+  <span id="kernel" class="tag">kernel 起動中</span>
+  <span class="right">
+    <span class="windows">
+      別ウィンドウ
+      <a href="?pane=chamber" target="_blank">層</a>
+      <a href="?pane=dag" target="_blank">DAG</a>
+      <a href="?pane=tsui" target="_blank">ツイ数</a>
+      <a href="?pane=lane" target="_blank">lane64</a>
+      <a href="?pane=joint" target="_blank">接合秩</a>
+    </span>
+  </span>
+</header>
+
+<main id="full">
+  <nav id="toc"></nav>
+
+  <section id="sheet"></section>
+
+  <aside id="scopewrap">
+    <div id="palette"></div>
+    <div id="grid"></div>
+  </aside>
+</main>
+
+<main id="solo" hidden>
+  <div id="soloHead"></div>
+  <div id="soloScope"></div>
+</main>
+
+<div id="boot">
+  <div class="bootbox">
+    <h1>Common scope notebook</h1>
+    <p id="bootmsg">lane64 の実行台をブラウザへ読み込んでいます。</p>
+    <ol id="bootlog"></ol>
+  </div>
+</div>
+
+<script src="render.js"></script>
+<script src="draw.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

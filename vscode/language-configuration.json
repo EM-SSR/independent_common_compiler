@@ -1,0 +1,7 @@
+{
+  "comments": { "lineComment": "#" },
+  "brackets": [],
+  "autoClosingPairs": [],
+  "surroundingPairs": [],
+  "wordPattern": "(?:be|bo|pa|pi|pu|pe|po){2,}|[kstnhmyrwgzdbp][aiueo]"
+}
